@@ -1,4 +1,4 @@
-#Constants for folder size conversion
+"""Constants for folder size conversion."""
 B = ('B', 0)
 KB = ('KB', 1)
 MB = ('MB', 2)
