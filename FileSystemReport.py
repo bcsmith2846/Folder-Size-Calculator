@@ -1,13 +1,13 @@
 import os
 
-start = "C:\\users\\bcsmi\\AppData\\"
+start = "C:\\users\\bcsmi\\AppData\\Local"
 
 def main():
     print("Dir: " + start)
     for dir in [os.path.join(start,dI) for dI in os.listdir(start) if os.path.isdir(os.path.join(start,dI))]:
         size = getSizes(dir)
         if size > 500.0:
-            print(f"{dir:<150}  {size:>20.2f}MB")
+            print(f"{dir:<152}  {size:>20.1f}MB")
             
         
 
