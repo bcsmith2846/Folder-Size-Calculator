@@ -17,7 +17,7 @@ def main():
 
         size = getSizes(dir)
         if size > folder_size_threshold:
-            print(f"{dir:<152}  {size:>7.1f}{size_units}")
+            print(f"{dir:<152}  {size:>7.1f}{size_units[0]}")
 
 
 def getSizes(dir):
@@ -25,7 +25,7 @@ def getSizes(dir):
     for root, dirs, files in os.walk(dir):
         for file in files:
             size += os.stat(os.path.join(root, file)).st_size
-    return size / (1024.0 ** size_units)
+    return size / (1024.0 ** size_units[1])
 
 
 
