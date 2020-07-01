@@ -6,8 +6,8 @@ def main():
     print("Dir: " + start)
     for dir in [os.path.join(start,dI) for dI in os.listdir(start) if os.path.isdir(os.path.join(start,dI))]:
         size = getSizes(dir)
-        if size > 500.0:
-            print(f"{dir:<150}  {size:>20.2f}MB")
+        if size > 0.5:
+            print(f"{dir:<150}  {size:>20.1f}GB")
             
         
 
@@ -16,7 +16,7 @@ def getSizes(dir):
     for root, dirs, files in os.walk(dir):
         for file in files:
             size += os.stat(os.path.join(root, file)).st_size
-    return size / (1024.0 ** 2)
+    return size / (1024.0 ** 3)
 
 
 
