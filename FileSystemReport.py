@@ -16,7 +16,7 @@ def getSizes(dir):
     for root, dirs, files in os.walk(dir):
         for file in files:
             size += os.stat(os.path.join(root, file)).st_size
-    return size / 1024.0 / 1024.0
+    return size / (1024.0 ** 2)
 
 
 
